@@ -4,14 +4,23 @@ on:
   push:
     branches:
       - main
-      - feature/*
+      - 'feature/**'
+    paths:
+      - 'project7/**'
+
   pull_request:
     branches:
       - main
+    paths:
+      - 'project7/**'
 
 jobs:
   terraform:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: project7
 
     steps:
       - name: Checkout Code
