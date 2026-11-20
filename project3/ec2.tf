@@ -5,8 +5,8 @@ provider "aws" {
 resource "aws_instance" "test" {
   ami           = "ami-0dc0718b8dd0dedd8"
   instance_type = "t3.micro"
-  key_name = "aj_keypair1"
-  user_data = <<-EOF
+  key_name      = "aj_keypair1"
+  user_data     = <<-EOF
   #!/bin/bash
   nohup yes > /dev/null &
   EOF
