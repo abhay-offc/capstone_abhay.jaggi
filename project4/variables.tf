@@ -1,0 +1,27 @@
+variable "s3_read_policy" {
+  type = any
+
+  default = {
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "s3:ListAllMyBuckets"
+        ]
+        Resource = "*"
+      },
+      {
+        Effect = "Allow"
+        Action = [
+          "s3:ListBucket",
+          "s3:GetObject"
+        ]
+        Resource = [
+          "arn:aws:s3:::*",
+          "arn:aws:s3:::*/*"
+        ]
+      }
+    ]
+  }
+}
