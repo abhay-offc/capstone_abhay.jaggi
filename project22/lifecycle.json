@@ -1,0 +1,14 @@
+{
+  "Rules": [
+    {
+      "ID": "DeleteLogsAfter1Day",
+      "Status": "Enabled",
+      "Filter": {
+        "Prefix": "logs/"
+      },
+      "Expiration": {
+        "Days": 1
+      }
+    }
+  ]
+}
